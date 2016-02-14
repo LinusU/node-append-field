@@ -6,7 +6,7 @@
   "main": "index.js",
   "devDependencies": {
     "mocha": "^2.2.4",
-    "standard": "^3.7.2",
+    "standard": "^6.0.5",
     "testdata-w3c-json-form": "^0.2.0"
   },
   "scripts": {
