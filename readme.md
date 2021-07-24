@@ -16,8 +16,9 @@ npm install --save append-field
 ## Usage
 
 ```javascript
-var appendField = require('append-field')
-var obj = Object.create(null)
+import appendField from 'append-field'
+
+const obj = Object.create(null)
 
 appendField(obj, 'pets[0][species]', 'Dahut')
 appendField(obj, 'pets[0][name]', 'Hypatia')
@@ -36,6 +37,10 @@ console.log(obj)
 ## API
 
 ### `appendField(store, key, value)`
+
+- `store` (`object`, required)
+- `key` (`string`, required)
+- `value` (`any`, required)
 
 Adds the field named `key` with the value `value` to the object `store`.
 

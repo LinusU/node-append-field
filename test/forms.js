@@ -1,15 +1,15 @@
 /* eslint-env mocha */
 
-var assert = require('assert')
-var appendField = require('../')
-var testData = require('testdata-w3c-json-form')
+import assert from 'node:assert'
+import testData from 'testdata-w3c-json-form'
+import appendField from '../index.js'
 
-describe('Append Field', function () {
-  for (var test of testData) {
-    it('handles ' + test.name, function () {
-      var store = Object.create(null)
+describe('Append Field', () => {
+  for (const test of testData) {
+    it(`handles ${test.name}`, () => {
+      const store = Object.create(null)
 
-      for (var field of test.fields) {
+      for (const field of test.fields) {
         appendField(store, field.key, field.value)
       }
 
