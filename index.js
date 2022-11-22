@@ -1,10 +1,12 @@
-import parsePath from './lib/parse-path.js'
-import setValue from './lib/set-value.js'
+const parsePath = require('./lib/parse-path.js')
+const setValue = require('./lib/set-value.js')
 
-export default function appendField (store, key, value) {
+function appendField (store, key, value) {
   const steps = parsePath(key)
 
   steps.reduce((context, step) => {
     return setValue(context, step, context[step.key], value)
   }, store)
 }
+
+module.exports = appendField
